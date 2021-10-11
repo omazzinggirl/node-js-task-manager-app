@@ -131,20 +131,20 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     //     console.log(error)
     // })
 
-    db.collection('users').deleteMany({
-        age: 32
-    }).then((result) => {
-        console.log(result.deletedCount)
-    }).catch((error) => {
-        console.log(error)
-    })
+    // db.collection('users').deleteMany({
+    //     age: 32
+    // }).then((result) => {
+    //     console.log(result.deletedCount)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
 
-    db.collection('users').deleteOne({
-        age: 22
-    }).then((result) => {
-        console.log(result.deletedCount)
-    }).catch((error) => {
-        console.log(error)
-    })
+    // db.collection('users').deleteOne({
+    //     age: 22
+    // }).then((result) => {
+    //     console.log(result.deletedCount)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
 
 })
