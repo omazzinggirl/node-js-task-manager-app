@@ -1,3 +1,4 @@
+//mongodb driver
 const mongodb = require('mongodb')
 // to innitialize the connection
 // give access to functions necessary to connect to the database
@@ -15,8 +16,52 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     console.log('Connected Successfully...')
     const db = client.db(databaseName)
 
-    db.collection('users').insertOne({
-        name: 'Oishee',
-        age: 22
+    // db.collection('users').insertOne({
+    //     name: 'Sonam',
+    //     age: 23
+    // }, (error, results) => {
+    //     if (error){
+    //         return console.log('Unable to insert user...')
+    //     }
+    //     console.log(results.ops)
+    // }
+    // )
+
+    // db.collection('users').insertMany([
+    //     {
+    //         name: 'Jen',
+    //         age: 27
+    //     }, {
+    //         name: 'Gunther',
+    //         age: 32
+    //     }
+    // ], (error, results) => {
+    //     if (error) {
+    //         return console.log('Unable to insert documents...')
+    //     }
+
+    //     console.log(results.ops)
+    // })
+
+    db.collection('tasks').insertMany([
+        {
+            description: 'AWS Module 6',
+            status: true
+        }, {
+            description: 'My Compliance Dashboard',
+            status: true
+        }, {
+            description: 'Udemy Course',
+            status: false
+        },
+    ], (error, results) => {
+        if (error) {
+            return console.log('Unable to insert documents...')
+        }
+
+        console.log(results.ops)
     })
+
+
+
 })
