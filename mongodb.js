@@ -105,4 +105,30 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     //     console.log(count)
     // })
 
+    // const updatePromise = db.collection('users').updateOne({
+    //     _id: new ObjectID("6164102df5ff8133ac4bd0cf")
+    // }, {
+    //     $set: {
+    //         age: 27
+    //     }
+    // })
+    // // search more update operators
+    // updatePromise.then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    db.collection('users').updateMany({
+        age: 27
+    }, {
+        $set: {
+            age: 32
+        }
+    }).then((result) => {
+        console.log(result.modifiedCount)
+    }).catch((error) => {
+        console.log(error)
+    })
+
 })
